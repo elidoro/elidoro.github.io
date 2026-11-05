@@ -1,0 +1,139 @@
+/* Elidoro — gemeinsames Aussehen aller Seiten.
+   Bewusst ohne fremde Schriften, Skripte oder Zähler: Die Seite lädt nichts
+   von anderen Servern nach. Damit stimmt die Datenschutzerklärung der Webseite. */
+
+:root {
+  --nacht: #16325c;      /* tiefes Ägäisblau aus dem Logo */
+  --meer: #1e8a96;       /* Türkis aus dem Logo */
+  --gold: #d6a346;       /* Gold der Quaste */
+  --sand: #fbf7ef;       /* warmer Hintergrund */
+  --karte: #ffffff;
+  --text: #1f2a37;
+  --leise: #5b6676;
+  --linie: #e7dfcf;
+  --rund: 18px;
+  --schatten: 0 10px 30px rgba(22, 50, 92, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Ubuntu, sans-serif;
+  color: var(--text);
+  background: var(--sand);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+a { color: var(--meer); }
+a:hover { color: var(--nacht); }
+
+.innen { max-width: 1040px; margin: 0 auto; padding: 0 22px; }
+
+/* ---------- Kopf ---------- */
+.kopf {
+  background: rgba(251, 247, 239, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--linie);
+  position: sticky; top: 0; z-index: 10;
+}
+.kopf .innen { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.marke { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--nacht); font-weight: 800; font-size: 1.25rem; letter-spacing: 0.02em; }
+.marke img { width: 38px; height: 38px; }
+.kopf nav a { margin-left: 22px; text-decoration: none; color: var(--leise); font-weight: 600; font-size: 0.95rem; }
+.kopf nav a:hover { color: var(--nacht); }
+
+/* ---------- Bühne ---------- */
+.buehne {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(214, 163, 70, 0.22), transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(30, 138, 150, 0.18), transparent 45%),
+    linear-gradient(160deg, #eaf4f6 0%, var(--sand) 70%);
+  padding: 72px 0 64px;
+  text-align: center;
+}
+.buehne img.logo { width: 150px; height: 150px; }
+.buehne h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--nacht); margin: 12px 0 6px; letter-spacing: 0.01em; }
+.buehne .unter { font-size: 1.2rem; color: var(--leise); max-width: 640px; margin: 0 auto; }
+.buehne .griechisch { color: var(--meer); font-style: italic; }
+
+/* ---------- Abschnitte ---------- */
+section { padding: 56px 0; }
+h2 { color: var(--nacht); font-size: 1.8rem; margin: 0 0 8px; }
+.einleitung { color: var(--leise); margin: 0 0 28px; max-width: 680px; }
+
+/* ---------- App-Karten ---------- */
+.karten { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
+.appkarte {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: var(--karte); border-radius: var(--rund); padding: 22px;
+  box-shadow: var(--schatten); text-decoration: none; color: var(--text);
+  border: 1px solid transparent; transition: transform .15s, border-color .15s;
+}
+.appkarte:hover { transform: translateY(-3px); border-color: var(--linie); color: var(--text); }
+.appkarte img { width: 76px; height: 76px; border-radius: 18px; flex: none; }
+.appkarte h3 { margin: 0 0 4px; color: var(--nacht); font-size: 1.2rem; }
+.appkarte p { margin: 0; color: var(--leise); font-size: 0.97rem; }
+.schild { display: inline-block; margin-top: 10px; font-size: 0.8rem; font-weight: 700; color: var(--meer); background: #e6f3f4; border-radius: 99px; padding: 3px 10px; }
+
+/* ---------- Werte ---------- */
+.werte { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.wert { background: var(--karte); border-radius: var(--rund); padding: 22px; border: 1px solid var(--linie); }
+.wert .zeichen { font-size: 1.7rem; }
+.wert h3 { margin: 6px 0 4px; color: var(--nacht); font-size: 1.08rem; }
+.wert p { margin: 0; color: var(--leise); font-size: 0.95rem; }
+
+/* ---------- App-Seite ---------- */
+.appkopf { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+.appkopf img { width: 128px; height: 128px; border-radius: 30px; box-shadow: var(--schatten); }
+.appkopf h1 { margin: 0; color: var(--nacht); font-size: clamp(2rem, 4.5vw, 2.8rem); }
+.appkopf p { margin: 4px 0 0; color: var(--leise); font-size: 1.15rem; }
+
+.bilderreihe { display: flex; gap: 16px; overflow-x: auto; padding: 6px 2px 18px; scroll-snap-type: x mandatory; }
+.bilderreihe img { width: 220px; height: auto; border-radius: 16px; box-shadow: var(--schatten); scroll-snap-align: start; flex: none; background: #fff; }
+
+.zwei { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+.kasten { background: var(--karte); border-radius: var(--rund); padding: 26px; box-shadow: var(--schatten); }
+.kasten h3 { margin-top: 0; color: var(--nacht); }
+.kasten.gold { border-top: 5px solid var(--gold); }
+.kasten.meer { border-top: 5px solid var(--meer); }
+.kasten ul { padding-left: 20px; margin: 0; }
+.kasten li { margin: 6px 0; }
+.preis { font-size: 1.5rem; font-weight: 800; color: var(--nacht); }
+.preis small { font-size: 0.95rem; font-weight: 600; color: var(--leise); }
+
+.hinweis { background: #fff8e8; border: 1px solid #f0dcae; border-radius: 14px; padding: 14px 18px; color: #6b5420; }
+
+/* ---------- Rechtstexte ---------- */
+.recht { max-width: 760px; }
+.recht h1 { color: var(--nacht); font-size: 2.1rem; margin-bottom: 4px; }
+.recht h2 { font-size: 1.3rem; margin-top: 34px; }
+.recht .stand { color: var(--leise); margin-top: 0; }
+.recht address { font-style: normal; background: var(--karte); border: 1px solid var(--linie); border-radius: 14px; padding: 16px 20px; display: inline-block; }
+
+/* ---------- Fuß ---------- */
+.fuss { border-top: 1px solid var(--linie); padding: 30px 0 40px; color: var(--leise); font-size: 0.92rem; }
+.fuss .innen { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.fuss a { color: var(--leise); margin-right: 18px; }
+
+@media (max-width: 560px) {
+  .kopf nav a { margin-left: 14px; font-size: 0.88rem; }
+  .marke span { display: none; }
+  .bilderreihe img { width: 180px; }
+}
+
+/* ---------- Sprachauswahl ---------- */
+.kopf nav { display: flex; align-items: center; }
+.sprachen { display: flex; gap: 4px; margin-left: 22px; padding-left: 18px; border-left: 1px solid var(--linie); }
+.kopf nav .sprachen a { margin: 0; padding: 3px 8px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; color: var(--leise); }
+.kopf nav .sprachen a.aktiv { background: var(--nacht); color: #fff; }
+.kopf nav .sprachen a:hover:not(.aktiv) { background: #ece5d6; }
+.sprachhinweis { display: inline-block; margin-top: 12px; font-size: 0.95rem; font-weight: 600; color: var(--nacht); background: #fff; border: 1px solid var(--linie); border-radius: 99px; padding: 5px 14px; }
+@media (max-width: 560px) {
+  .sprachen { margin-left: 10px; padding-left: 10px; }
+  .kopf nav .sprachen a { padding: 2px 6px; }
+  .kopf nav > a { display: none; }
+}
