@@ -109,7 +109,7 @@ h2 { color: var(--nacht); font-size: 1.8rem; margin: 0 0 8px; }
 
 /* ---------- Rechtstexte ---------- */
 .recht { max-width: 760px; }
-.recht h1 { color: var(--nacht); font-size: 2.1rem; margin-bottom: 4px; }
+.recht h1 { color: var(--nacht); font-size: clamp(1.6rem, 7vw, 2.1rem); margin-bottom: 4px; overflow-wrap: break-word; hyphens: auto; }
 .recht h2 { font-size: 1.3rem; margin-top: 34px; }
 .recht .stand { color: var(--leise); margin-top: 0; }
 .recht address { font-style: normal; background: var(--karte); border: 1px solid var(--linie); border-radius: 14px; padding: 16px 20px; display: inline-block; }
