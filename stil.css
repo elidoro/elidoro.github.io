@@ -103,6 +103,12 @@ h2 { color: var(--nacht); font-size: 1.8rem; margin: 0 0 8px; }
 .kasten ul { padding-left: 20px; margin: 0; }
 .kasten li { margin: 6px 0; }
 .preis { font-size: 1.5rem; font-weight: 800; color: var(--nacht); }
+.playknopf { display: inline-block; margin-top: 14px; padding: 9px 18px; border-radius: 99px; background: var(--nacht); color: #fff; font-weight: 700; text-decoration: none; }
+.playknopf.bald { background: #e6f3f4; color: var(--meer); }
+.kaufinfo { margin-top: 18px; padding: 14px 16px; background: #fff8e8; border-radius: 12px; font-size: .93rem; }
+.kaufinfo h4 { margin: 0 0 6px; color: var(--nacht); }
+.kaufinfo ul { padding-left: 18px; }
+.kaufinfo li { margin: 4px 0; }
 .preis small { font-size: 0.95rem; font-weight: 600; color: var(--leise); }
 
 .hinweis { background: #fff8e8; border: 1px solid #f0dcae; border-radius: 14px; padding: 14px 18px; color: #6b5420; }
